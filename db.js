@@ -1,8 +1,10 @@
 const MongoClient = require('mongodb').MongoClient;
+const dotenv = require('dotenv')
+dotenv.config()
 
-const url = 'mongodb://localhost:27017/';
+const url = process.env.URL1;
 
-const url2 = 'mongodb+srv://gamma-prep:gamma-prep@cluster0.v16xs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const url2 = process.env.URL2;
 
 MongoClient.connect(url2, (err, client)=>{
     if(err) throw err;
